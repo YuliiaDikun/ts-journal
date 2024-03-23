@@ -13,8 +13,7 @@ const user: User = reactive({
 const entries = reactive<Entry[]>([]);
 
 const handleCreateEntry = (entry: Entry) => {
-  entries.unshift(entry);
-  
+  entries.unshift(entry);  
 };
 </script>
 
@@ -24,7 +23,7 @@ const handleCreateEntry = (entry: Entry) => {
     <EntryEditor @@create="handleCreateEntry" />
     <ul>
       <li v-for="entry in entries" :key="entry.userId">
-        <EntryCard />
+        <EntryCard :entry="entry"/>
       </li>
     </ul>
   </main>

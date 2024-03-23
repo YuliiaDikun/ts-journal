@@ -1,7 +1,7 @@
 import type Emoji from "./Emoji"
 interface Entry { 
     body: string; 
-    emoji: Emoji | null 
+    emoji: Emoji
     createdAt: Date
     userId: number
 }

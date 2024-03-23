@@ -22,15 +22,15 @@ const handleTextInput = (e: Event) => {
     body.value = textarea.value = textarea.value.substring(0, maxChars);
   }
 };
-const submitForm = () => {
-  console.log('emit');
-  
-  emit('@create', {
-    body: body.value,
-    emoji: emoji.value,
-    createdAt: new Date(),
-    userId: Math.random(),
-  });
+const submitForm = () => {  
+  if (emoji.value !== null) {
+    emit('@create', {
+      body: body.value,
+      emoji: emoji.value,
+      createdAt: new Date(),
+      userId: Math.random(),
+    });
+  }
   body.value = '';
   emoji.value = null;
 };
